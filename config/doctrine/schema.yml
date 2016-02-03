@@ -1,0 +1,54 @@
+Titular:
+  actAs: { Timestampable: ~ }
+  columns:
+    id:           { type: integer, notnull: true, primary: true, autoincrement: true }
+    nome:         { type: string(255), notnull: true }
+    matricula:    { type: string(30), notnull: true, unique:true }
+    data_admiss:  { type: date, notnull:false }
+    data_expira:  { type:date }
+    data_nasc:    { type:date }
+    data_renova:  { type:date, notnull:false }
+    estado_civil: { type: string(100), notnull:false }
+    sexo:         { type: string(1), notnull:true }
+
+Dependente:
+  actAs: { Timestampable: ~ }
+  columns:
+    id:           { type: integer, notnull: true, primary: true, autoincrement: true }
+    nome:         { type: string(255), notnull: true }
+    parentesco:   { type: string(50), notnull: true }
+    sexo:         { type: string(1), notnull:true }
+    nasc:         { type: date, notnull: true }
+    data_expira:  { type:date, notnull: true }
+    data_renova:  { type:date, notnull: false }
+    titular_id:   { type: integer, notnull: true }
+  relations:
+    Titular: { foreignAlias : Dependentes, onDelete:CASCADE }
+
+Atendimento:
+  actAs: 
+    Timestampable: 
+      updated: { disabled: true }
+  columns: 
+    id: {type: integer, notnull: true, primary:true, autoincrement: true }
+    descricao: { type: string(100), notnull:true }
+    titular_id: { type: integer, notnull:true }
+    tipo:      { type: integer, notnull:true }
+    encaminhamento_id: {type: integer, notnull:false }
+    sf_guard_user_id:   {type: integer, notnull:true }
+  relations: 
+    Titular: { foreignAlias : Atendimentos }
+    sfGuardUser: { local: sf_guard_user_id, foreign: id }
+    Encaminhamento: { local: encaminhamento_id, foreign:id }
+
+Encaminhamento:
+  actAs: 
+    Timestampable: 
+      updated: { disabled: true }
+  columns:
+    id: { type: integer, notnull: true, primary: true, autoincrement: true }
+    local: { type: integer, notnull: true }
+    assoc_id: { type: integer, notnull:true }
+    tipo: { type: integer, notnull:true }
+    gratuito: { type: boolean, notnull:false, default: false }
+    inicio_validade: { type: date, notnull:false, default: null }

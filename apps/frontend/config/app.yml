@@ -1,0 +1,24 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+# default values
+all:
+  validade_dias: 180
+  max_age:       100
+# Tipos de atendimento
+  atend_tipo_inc_titular:     1
+  atend_tipo_inc_dependente:  2
+  atend_tipo_alt_titular:     3
+  atend_tipo_alt_dependente:  4
+  atend_tipo_imp_adesão:      5
+  atend_tipo_imp_cart:        6
+  atend_tipo_excl_dependente: 7
+  atend_tipo_renovacao:       8
+  atend_tipo_imp_encaminha:   9
+  atend_tipo_excl_titular:   10
+#Enderecos para encaminhamento dentario
+  encaminha:
+    enderecos: ['centro', 'campo_grande']
+#Tipos de associados
+  assoc_titular:    1
+  assoc_dependente: 2

@@ -1,0 +1,226 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+relatorio_index:
+  url: /relatorio
+  param: { module: relatorio, action: historico }
+
+relatorio_historico:
+  url: /relatorio/historico/*
+  param: { module: relatorio, action: historico }
+
+relatorio_show_encaminhamento:
+  url: /relatorio/encaminhamento/show/:id
+  param: { module: relatorio, action: showencaminhamento }
+  requirements:
+    id: \d+
+
+relatorio_encaminhamento_page:
+  url: /relatorio/encaminhamento/page/:page/*
+  param: { module: relatorio, action: encaminhamento }
+  requirements:
+    page: \d+
+
+relatorio_encaminhamento_interval:
+  url: /relatorio/encaminhamento/:start/*
+  param: { module: relatorio, action: encaminhamento }
+  requirements:
+    start: \d+
+
+relatorio_encaminhamento_print:
+  url: /relatorio/encaminhamento/print/:start/:end
+  param: { module: relatorio, action: printencaminhamento }
+  requirements:
+    start: \d+
+    end: \d+
+
+relatorio_encaminhamento:
+  url: /relatorio/encaminhamento/*
+  param: { module: relatorio, action: encaminhamento }
+
+atendimento_titular_search:
+  url: /atendimento/titular/busca
+  param: { module: atendimento, action: search }
+
+atendimento_titular:
+  url: /atendimento/titular
+  param: { module: atendimento, action: titular }
+
+atendimento_titular_show:
+  url: /atendimento/titular/show/:id
+  param: { module: atendimento, action:showtitular }
+  requirements:
+    id: \d+
+
+atendimento_titular_novo:
+  url: /atendimento/titular/novo
+  param: { module: atendimento, action:novotitular }
+
+atendimento_titular_edit:
+  url: /atendimento/titular/edit/:id
+  param: { module: atendimento, action:edittitular }
+  requirements:
+    id: \d+
+
+atendimento_titular_create:
+  url: /atendimento/titular/create
+  param: { module: atendimento, action:createtitular }
+
+atendimento_titular_update:
+  url: /atendimento/titular/update/:id
+  param: { module: atendimento, action:updatetitular }
+  requirements:
+    id: \d+
+
+atendimento_titular_etiqueta:
+  url: /atendimento/titular/imprimeetiqueta/:id
+  param: { module: atendimento, action:imprimeetiqueta }
+  requirements:
+    id: \d+
+
+atendimento_titular_delete:
+  url: /atendimento/titular/delete/:id
+  param: { module: atendimento, action:deletetitular }
+  requirements:
+    id: \d+
+
+atendimento_titular_operationok:
+  url: /atendimento/titular/ok/:id
+  param: { module: atendimento, action:operationoktitular }
+  requirements:
+    id: \d+
+
+atendimento_titular_renew:
+  url: /atendimento/titular/renovar/:id
+  param: { module: atendimento, action:renewtitular }
+  requirements:
+    id: \d+
+
+atendimento_titular_prep_ficha:
+  url: /atendimento/titular/prepficha/:id
+  param: { module: atendimento, action:preparaficha }
+  requirements:
+    id: \d+
+
+atendimento_titular_imprime_etiqueta:
+  url: /atendimento/titular/etiqueta/:id
+  param: { module: atendimento, action:etiquetaconfirma }
+  requirements:
+    id: \d+
+
+atendimento_titular_update_expira:
+  url: /atendimento/titular/renovaexpira/:titular
+  param: { module: atendimento, action:renovaexpira }
+  requirements:
+    titular: \d+
+
+atendimento_titular_ficha:
+  url: /atendimento/titular/ficha/:id
+  param: { module: atendimento, action:fichatitular }
+  requirements:
+    id: \d+
+
+atendimento_dependente_novo:
+  url: /atendimento/titular/:titular/dependente/novo
+  param: { module: atendimento, action:novodependente }
+  requirements:
+    titular: \d+
+
+atendimento_etiqueta_dependente:
+  url: /atendimento/dependente/print/:id
+  param: { module: atendimento, action:petqdepend }
+  requirements:
+    id: \d+
+
+atendimento_create_dependente:
+  url: /atendimento/dependente/create
+  param: { module: atendimento, action:createdependente }
+
+atendimento_show_dependente:
+  url: /atendimento/titular/:titular/dependentes
+  param: { module: atendimento, action:showdependente }
+  requirements:
+    titular: \d+
+
+atendimento_edit_dependente:
+  url: /atendimento/dependente/edit/:id
+  param: { module: atendimento, action:editdependente }
+  requirements:
+    id: \d+
+
+atendimento_update_dependente:
+  url: /atendimento/dependente/update/:id
+  param: { module: atendimento, action:updatedependente }
+  requirements:
+    id: \d+
+
+atendimento_delete_dependente:
+  url: /atendimento/dependente/delete/:id
+  param: { module: atendimento, action:deletedependente }
+  requirements:
+    id: \d+
+
+atendimento_etiqueta_dependente_confirma:
+  url: /atendimento/dependente/etiqueta/:id
+  param: { module: atendimento, action:etiquetaconfirmadependente }
+  requirements:
+    id: \d+
+
+atendimento_dependente:
+  url: /atendimento/dependente
+  param: { module: atendimento, action: dependente }
+
+encaminhamento_print:
+  url: /atendimento/encaminha/print/:id
+  param: { module: atendimento, action:encaminhaprint }
+  requirements:
+    id: \d+
+
+encaminhamento_ok:
+  url: /atendimento/encaminha/ok/:id
+  param: { module: atendimento, action:encaminhaok }
+  requirements:
+    id: \d+
+
+encaminhamento_prep:
+  url: /atendimento/encaminha/:tipo/:id
+  param: { module: atendimento, action:prepencaminha }
+  requirements:
+    id: \d+
+
+encaminhamento_delete:
+  url: /encaminhamento/delete/:id
+  param: { module: atendimento, action:deleteencaminha }
+  requirements:
+    id: \d+
+
+encaminhamento_show:
+  url: /encaminhamento/show/:id
+  param: { module: atendimento, action:showencaminha }
+  requirements:
+    id: \d+
+
+encaminhamento_titular:
+  url: /atendimento/titular/encaminha/:id
+  param: { module: atendimento, action:encaminha }
+  requirements:
+    id: \d+
+
+encaminhamento_dependente:
+  url: /atendimento/dependente/encaminha/:id
+  param: { module: atendimento, action:encaminha }
+  requirements:
+    id: \d+
+
+# default rules
+homepage:
+  url:   /
+  param: { module: atendimento, action: titular }
+
+# generic rules
+# please, remove them by adding more specific rules
+#default_index:
+#  url:   /:module
+#  param: { action: index }
+#
+#default:
+#  url:   /:module/:action/*

@@ -1,0 +1,29 @@
+#main
+{
+  font-family: sans-serif;
+}
+h1
+{
+  font-size: x-large;
+}
+
+h2
+{
+  font-size: large;
+  text-align: center;
+}
+th
+{
+  font-size: medium;
+  font-weight: bold;
+  background-color: #8D8696;
+  color: white;
+}
+td
+{
+  font-size: small;
+}
+tr.bg
+{
+  background-color: #E2E1E3;
+}
