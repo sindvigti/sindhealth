@@ -1,0 +1,7 @@
+cache/*
+logs/*
+!cache/.gitkeep
+!logs/.gitkeep
+
+config/databases.yml
+
