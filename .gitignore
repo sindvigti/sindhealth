@@ -3,5 +3,8 @@ logs/*
 !cache/.gitkeep
 !logs/.gitkeep
 
+web/uploads/*
+!web/uploads/.gitkeep
+
 config/databases.yml
 
